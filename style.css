@@ -1,31 +1,91 @@
 body {
     margin: 0;
     font-family: sans-serif;
-    background-image: url('Nadav and Eilat 55.jpg'); /* תחליפי לתמונה שלכם */
-    background-size: cover;
-    background-position: center;
+    background-image: url('Nadav and Eilat 55.jpg'); /* תחליפי לתמונה שלך */
+    background-size: cover; /* תוודא שהתמונה ממלאת את כל הרקע */
+    background-position: center; /* מרכז את התמונה */
+    background-attachment: fixed; /* התמונה נשארת במקום כאשר גוללים */
     color: white;
     text-align: center;
     padding: 20px;
     direction: rtl;
-  }
-  
-  .container {
+}
+
+.container {
     background: rgba(0, 0, 0, 0.6);
     padding: 30px;
     border-radius: 20px;
     max-width: 800px;
     margin: auto;
-  }
-  
-  input[type="file"] {
-    margin: 20px 0;
-  }
-  
-  #gallery img {
+}
+
+input[type="file"] {
+    display: none; /* מסתיר את כפתור הקובץ הסטנדרטי */
+}
+
+.upload-label {
+    display: inline-block;
+    padding: 10px 2px;
+    background-color: #467b8b;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.upload-label:hover {
+    background-color: #f4f9f4;
+}
+
+.gallery-button {
+    margin-top: 20px;
+    padding: 10px 2px;
+    background-color: #58c6d5;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.gallery-button:hover {
+    background-color: #0b7dda;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#gallery img {
     max-width: 200px;
     margin: 10px;
     border: 3px solid white;
     border-radius: 10px;
-  }
-  
+}
+
+.hidden {
+    display: none;
+}
+
+/* התאמה למסכים קטנים יותר (טלפונים) */
+@media only screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .upload-label, .gallery-button {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    #gallery img {
+        max-width: 100%; /* התמונה לא תתפצל ותמלא את הרוחב של המסך */
+    }
+}

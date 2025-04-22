@@ -2,14 +2,17 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>החתונה של אהבה</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h1>ברוכים הבאים לחתונה שלנו 💍</h1>
+    <label for="upload" class="upload-label">תעלו תעלו תמונה</label>
     <input type="file" accept="image/*" capture="environment" id="upload" />
-    <div id="gallery"></div>
+    <button id="showGallery" class="gallery-button">התמונות שלכם :)</button>
+    <div id="gallery" class="hidden"></div>
   </div>
   <script src="script.js"></script>
 </body>
