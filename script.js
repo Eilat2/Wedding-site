@@ -40,6 +40,21 @@ const addToGallery = (imageUrl) => {
   gallery.classList.remove("hidden");
 };
 
+// שמירת התמונות ב-localStorage כך שיתעדכנו בכל טעינה של האתר
+const saveImageUrlsToLocalStorage = (imageUrl) => {
+  let images = JSON.parse(localStorage.getItem('images')) || [];
+  images.push(imageUrl);
+  localStorage.setItem('images', JSON.stringify(images));
+};
+
+// הצגת התמונות מה-localStorage אם יש
+const loadImagesFromLocalStorage = () => {
+  let images = JSON.parse(localStorage.getItem('images')) || [];
+  images.forEach(imageUrl => {
+    addToGallery(imageUrl);
+  });
+};
+
 // העלאת תמונות והצגתן בגלריה
 upload.addEventListener("change", async (event) => {
   const file = event.target.files[0];
@@ -47,6 +62,7 @@ upload.addEventListener("change", async (event) => {
     const imageUrl = await uploadToCloudinary(file);
     if (imageUrl) {
       addToGallery(imageUrl);
+      saveImageUrlsToLocalStorage(imageUrl);  // שומר את ה-URL ב-localStorage
     }
   } else {
     alert("Please select a file!");
@@ -57,3 +73,6 @@ upload.addEventListener("change", async (event) => {
 showGalleryButton.addEventListener("click", () => {
   gallery.classList.toggle("hidden");
 });
+
+// טוען את התמונות ששמרנו ב-localStorage
+loadImagesFromLocalStorage();
