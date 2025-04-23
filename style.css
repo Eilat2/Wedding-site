@@ -5,7 +5,7 @@ body {
     background-size: cover; /* תוודא שהתמונה ממלאת את כל הרקע */
     background-position: center; /* מרכז את התמונה */
     background-attachment: fixed; /* התמונה נשארת במקום כאשר גוללים */
-    color: white;
+    color: rgb(246, 244, 244);
     text-align: center;
     padding: 20px;
     direction: rtl;
@@ -27,28 +27,28 @@ input[type="file"] {
     display: inline-block;
     padding: 10px 2px;
     background-color: #467b8b;
-    color: white;
+    color: rgb(246, 247, 247);
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
 }
 
 .upload-label:hover {
-    background-color: #f4f9f4;
+    background-color: #63bab8;
 }
 
 .gallery-button {
     margin-top: 20px;
     padding: 10px 2px;
-    background-color: #58c6d5;
-    color: white;
+    background-color: #46aebb;
+    color: rgb(251, 254, 255);
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
 }
 
 .gallery-button:hover {
-    background-color: #0b7dda;
+    background-color: #62d6e5;
 }
 
 #gallery {
