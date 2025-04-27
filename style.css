@@ -1,91 +1,116 @@
 body {
-    margin: 0;
-    font-family: sans-serif;
-    background-image: url('Nadav and Eilat 55.jpg'); /* תחליפי לתמונה שלך */
-    background-size: cover; /* תוודא שהתמונה ממלאת את כל הרקע */
-    background-position: center; /* מרכז את התמונה */
-    background-attachment: fixed; /* התמונה נשארת במקום כאשר גוללים */
-    color: rgb(246, 244, 244);
-    text-align: center;
-    padding: 20px;
-    direction: rtl;
+  margin: 0;
+  font-family: sans-serif;
+  background-image: url('Nadav and Eilat 55.jpg'); /* תחליפי לתמונה שלך */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: rgb(246, 244, 244);
+  text-align: center;
+  padding: 20px;
+  direction: rtl;
 }
 
 .container {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 800px;
-    margin: auto;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: auto;
 }
 
 input[type="file"] {
-    display: none; /* מסתיר את כפתור הקובץ הסטנדרטי */
+  display: none;
 }
 
 .upload-label {
-    display: inline-block;
-    padding: 10px 2px;
-    background-color: #467b8b;
-    color: rgb(246, 247, 247);
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #467b8b;
+  color: rgb(246, 247, 247);
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px 0;
 }
 
 .upload-label:hover {
-    background-color: #63bab8;
+  background-color: #63bab8;
 }
 
 .gallery-button {
-    margin-top: 20px;
-    padding: 10px 2px;
-    background-color: #46aebb;
-    color: rgb(251, 254, 255);
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #46aebb;
+  color: rgb(251, 254, 255);
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
 }
 
 .gallery-button:hover {
-    background-color: #62d6e5;
+  background-color: #62d6e5;
 }
 
 #gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
 }
 
-#gallery img {
-    max-width: 200px;
-    margin: 10px;
-    border: 3px solid white;
-    border-radius: 10px;
+.gallery-image {
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 3px solid white;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
+.loading {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* התאמה למסכים קטנים יותר (טלפונים) */
 @media only screen and (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
+  body {
+    padding: 10px;
+  }
 
-    .container {
-        padding: 20px;
-        max-width: 100%;
-    }
+  .container {
+    padding: 20px;
+    max-width: 100%;
+  }
 
-    .upload-label, .gallery-button {
-        width: 100%;
-        font-size: 18px;
-    }
+  .upload-label, .gallery-button {
+    width: 80%;
+    font-size: 18px;
+  }
 
-    #gallery img {
-        max-width: 100%; /* התמונה לא תתפצל ותמלא את הרוחב של המסך */
-    }
+  .gallery-image {
+    max-width: 100%;
+    height: 180px;
+  }
 }
