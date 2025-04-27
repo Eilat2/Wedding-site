@@ -1,6 +1,6 @@
 const cloudinaryUrl = "https://api.cloudinary.com/v1_1/dejcl7muo/image/upload";
 const cloudName = 'dejcl7muo'; // שם הענן שלך ב-Cloudinary
-const apiKey = 'kFQHgiH2kfjcoH2krEPS43ebEpo'; // הוסף את ה-API Key שלך כאן
+const apiKey = '345784617395654'; // הוסף את ה-API Key שלך כאן
 
 const upload = document.getElementById("upload");
 const gallery = document.getElementById("gallery");
